@@ -1,0 +1,21 @@
+<li id="entry-<%=entry.id%>" class="entry">
+  <%= link_to gravatar_for(entry.user, size: 60), entry.user %>
+  <span class="user"><%= link_to entry.user.name, entry.user %></span>
+  <span class="title"><%= entry.title %></span>
+  <span class="content">
+    <%= entry.content %>
+    <%= image_tag entry.picture.url if entry.picture? %>
+  </span>
+  <span class="timestamp">
+    Posted at <%= entry.created_at %>
+    <% if current_user?(entry.user) %>
+    	<%= link_to "  delete", entry, method: :delete, data: {confirm: "Are you sure?"}, remote: true%>
+    <% end %>
+  </span>
+  <% if entry.comments.any? %>
+    <%= render entry.comments %>
+  <% end %>
+  <% if logged_in? %>
+    <%= render 'comments/comment_form', entry: entry %>
+  <% end %>
+</li>
