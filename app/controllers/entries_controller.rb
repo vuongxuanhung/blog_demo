@@ -8,6 +8,7 @@ class EntriesController < ApplicationController
 			redirect_to root_url
 		else
 			@feed_items = current_user.feed.paginate(page: params[:page], per_page: 8)
+			@comment = current_user.comments.build if logged_in?
 			render 'static_pages/home'
 		end
 	end
