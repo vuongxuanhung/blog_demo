@@ -1,12 +1,12 @@
 <li class="comment" id='comment-<%= comment.id %>'>
+	<% if current_user?(comment.user) %>
+	    	<%= link_to "", comment, method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "glyphicon glyphicon-remove" %>
+	    <% end %>
 	<%= gravatar_for comment.user, size: 40 %>
 	<span class="user"><%= link_to comment.user.name, comment.user %></span>
 	<span class="comment"><%= comment.content %></span>
 	<span class="timestamp">
 	    <%= time_ago_in_words(comment.created_at) %> ago.
-	    <% if current_user?(comment.user) %>
-	    	<%= link_to "delete", comment, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
-	    <% end %>
     </span>
 
 </li>

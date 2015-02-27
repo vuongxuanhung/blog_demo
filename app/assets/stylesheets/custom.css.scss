@@ -225,6 +225,12 @@ aside {
     padding: 10px 0;
     border-top: 1px solid #E7DDDD;
   }
+
+  .glyphicon-remove{
+    position: relative;
+    float: right;
+    color: #4FA1F7;
+  }
   .user {
     margin-top: 5em;
     padding-top: 0;
@@ -273,6 +279,7 @@ span.picture {
 
 .entry{
   margin-top: 30px;
+  both: clear;
 }
 
 .comment_form{
@@ -280,9 +287,12 @@ span.picture {
   input{
     width:10%;
     margin-top: -5px;
+    margin-left: 50px;
   }
   textarea{
     min-height: 30px;
+    width: 95%;
+    resize: none;
   }
 }
 
