@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 								dependent: :destroy
 	has_many :following, through: :active_relationships, source: :followed
 	has_many :followers, through: :passive_relationships, source: :follower
-
 	has_many :comments, dependent: :destroy
 
 	before_save :downcase_email
@@ -61,7 +60,7 @@ class User < ActiveRecord::Base
 	end
 
 	private
-		def downcase_email
-			self.email = email.downcase
-		end
+	def downcase_email
+		self.email = email.downcase
+	end
 end
