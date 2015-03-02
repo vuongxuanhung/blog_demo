@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dsbk5drbx
+  api_key: '676531172558467'
+  api_secret: Z8kpty1eiVzA80-NWJd5hYczAKE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dsbk5drbx
+  api_key: '676531172558467'
+  api_secret: Z8kpty1eiVzA80-NWJd5hYczAKE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dsbk5drbx
+  api_key: '676531172558467'
+  api_secret: Z8kpty1eiVzA80-NWJd5hYczAKE
+  enhance_image_tag: true
+  static_image_support: false
